@@ -11,10 +11,41 @@ app.app_context().push()
 
 #criação da db com sql alchemy
 
+#padrão criacional - Singleton, salvando as bases das opções opcionais
+class Topic_Template:
+   __instance = None
+
+   def __new__(cls):
+       if Topic_Template.__instance is None:
+          Topic_Template.__instance = super().__new__(cls)
+       return Topic_Template.__instance
+
+   def __init__(self):
+       # Atributos de exemplo
+       self.complexity = 50
+       self.topic_type = "standart"
+
+#decorator será utilizado para adicionar o "topic_type" no topic_1 e topic_2 e sua complexidade
+class Fuse_Topics:
+    def extractdata(self):
+        self.x = x
+    
+    def getdata(self):
+        return self.x
+class AddComplexity:
+    def __init__(self, Fuse_Topics):
+        self._Fuse_Topics = Fuse_Topics
+
+class AddType_Topic:
+    def __init__(self, Fuse_Topics):
+        self._Fuse_Topics = Fuse_Topics
+
+
+#criação da db
 class Users(db.model):
     __tablename__ = "users"
 
-    #a db de cada usuario consistirá em  integer {{id}} único, string {{username}}, string {{topic_1}}, string {{topic_2}},integer {{complexity}}
+    #a db de cada usuario consistirá em  integer {{id}} único, string {{username}}, string {{topic_1}}, string {{topic_2}},integer {{complexity}}, string{{topic_type}}
     id = db.Column(db.Integer, primary_key = True)
     username = db.Column(db.String, unique = True, nullable = False)
     topic_1 = db.Coluumn(db.String, nullable = False)
@@ -27,7 +58,7 @@ class Users(db.model):
         self.topic_1 = topic_1
         self.topic_2 = topic_2
         self.complexity = complexity
-
+#criação do back-end da pagina index, dar request e guardar na db criada
 
 
 
