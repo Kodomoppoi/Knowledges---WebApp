@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body> 
+    message
+
+    <form method='POST' action="{{  url_for('attInfo', id=user.id) }}">
+        <input type = "text" name = "username" value = {{user.username}}><br><br>
+
+
+        <input type = "text" name = "topic_1" value = {{user.topic_1}}><br>
+        <input type = "text" name = "type_1" value = {{user.type_1}}><br>
+        <input type = "text" name = "complex_1" value = {{user.complex_1}}><br><br>
+
+        <input type = "text" name = "topic_2" value = {{user.topic_2}}><br>
+        <input type = "text" name = "type_2" value = {{user.type_2}}><br>
+        <input type = "text" name = "complex_2" value = {{user.complex_2}}><br>
+
+        <input type = "submit" value="Enviar">
+    </form>
+    
+    
+</body>
+</html>
