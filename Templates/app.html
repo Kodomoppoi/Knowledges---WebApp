@@ -6,9 +6,12 @@
     <title>Document</title>
 </head>
 <body> 
-        <form action="{{ url_for('chatgpt') }}" method="post">
-        Qual sua dúvida? <input type="text" name="questao"> <input type="submit">
-        </form>
-       {{ resposta }}
+    <form action="{{ url_for('showApp', id=user.id) }}" method="post">
+        <input type="submit" value="Gerar resposta">
+    </form>
+    
+        {{resposta}}
+    
+    <a href="{{ url_for('attInfo', id=user.id) }}">Atualizar informações</a>
 </body>
 </html>

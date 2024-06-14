@@ -6,20 +6,27 @@
     <title>Document</title>
 </head>
 <body>
+    {{message}}
     <form method='POST' action="{{  url_for('addUser')  }}">
-        <input type = "text" name = "username" placeholder="Username"><br><br>
+        <input type = "text" name = "username" placeholder="Username"><br>
+        <input type = "text" name = "key" placeholder="Chave"><br><br>
+
 
 
         <input type = "text" name = "topic_1" placeholder="Nome do Tópico"><br>
-        <input type = "text" name = "type_1" placeholder="Tipo do Tópico"><br><br>
 
-        <input type = "text" name = "topic_2" placeholder="Nome do Tópico"><br>
-        <input type = "text" name = "type_2" placeholder="Tipo do Tópico"><br><br>
-        <input type = "text" name = "complexity" placeholder="Complexidade"><br>
+        <input type = "text" name = "topic_2" placeholder="Nome do Tópico"><br><br>
+
+        <input type = "text" name = "typeKnowledge" placeholder="Tipo do Tópico"><br>
+        <input type = "text" name = "complexity" placeholder="Complexidade"><br><br>
         
 
 
         <input type = "submit" value="Enviar">
+
+        <input type = "text" name = "login" placeholder="insira a chave"><br>
+
+
     </form>
 
 </body>

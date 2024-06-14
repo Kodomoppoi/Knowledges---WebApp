@@ -13,11 +13,10 @@
 
 
         <input type = "text" name = "topic_1" value = {{user.topic_1}}><br>
-        <input type = "text" name = "type_1" value = {{user.type_1}}><br><br>
+        <input type = "text" name = "topic_2" value = {{user.topic_2}}><br><br>
 
-        <input type = "text" name = "topic_2" value = {{user.topic_2}}><br>
-        <input type = "text" name = "type_2" value = {{user.type_2}}><br><br>
-        <input type = "text" name = "complexity" placeholder="Complexidade"><br>
+        <input type = "text" name = "typeKnowledge" value = {{user.typeKnowledge}}><br>
+        <input type = "text" name = "complexity" placeholder="{{user.complexity}}"><br>
 
         <input type = "submit" value="Enviar"> <a href = {{url_for('showApp', id=user.id)}}>APP</a>
     </form>
