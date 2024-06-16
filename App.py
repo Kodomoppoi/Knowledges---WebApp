@@ -77,7 +77,7 @@ class Users(db.Model):
 
 @app.route('/', methods=['GET', 'POST'])
 def addUser():
-    if request.method == 'GET':      
+    if request.method == 'GET':
         return render_template('index.html')
     elif request.method == 'POST':
         key = request.form.get('key')
@@ -90,7 +90,7 @@ def addUser():
                 return render_template('confirmation.html', user=user)
             else:
                 return render_template('index.html', message = 'usuario nao encontrado')
-            
+
         if key == '':
             return render_template('index.html', message='Você não inseriu uma chave, por favor, crie uma.')
 
@@ -121,8 +121,8 @@ def addUser():
         session['id'] = user.id
         return render_template('confirmation.html', user=user)
 
-    
-        
+
+
 @app.route('/confirmation/<id>', methods = ['GET', 'POST'])
 def attInfo(id):
 
@@ -130,33 +130,33 @@ def attInfo(id):
 
     if user == None:
         return render_template('index.html', message = 'formulario nao encontrado, preencha os dados')
-    
+
     if request.method == 'GET':
         return render_template('confirmation.html', user=user)
     elif request.method == 'POST':
 
         user.username = request.form.get('username')
         user.topic_1 = request.form.get('topic_1')
-        user.topic_2 = request.form.get('topic_2')   
+        user.topic_2 = request.form.get('topic_2')
         user.complexity = request.form.get('complexity')
         typeKnowledge = request.form.get('typeKnowledge')
         db.session.commit()
         return render_template('confirmation.html', user=user, message = 'informações atualizadas')
-    
+
 @app.route('/app/<id>', methods = ['GET', 'POST'])
 def showApp(id):
     user = Users.query.filter(Users.id == id).first()
 
     if user == None:
         return render_template('index.html', message = 'formulario nao encontrado, preencha os dados')
-    
+
     if request.method =='GET':
         return render_template('app.html', user=user)
     elif request.method == 'POST':
         prompt = f'Estou interessado em explorar a {user.topic_1}, também explorar a {user.topic_2}. Ambas na visão do tipo de conhecimento das {user.typeKnowledge}. Pode me sugerir disciplinas ou áreas de estudo que intersecionem esses tópicos e ofereçam uma compreensão profunda e interdisciplinar com a complexidade em torno de {user.complexity}? Além disso, ofereça insights introdutórios interessantes. Por favor, inclua a lógica por trás das suas escolhas.'
         resposta = perguntar(prompt)
         return render_template('app.html', resposta=resposta, user=user)
-    
+
 if __name__ == "__main__":
     db.create_all()
     app.run(host = '0.0.0.0', debug = True)

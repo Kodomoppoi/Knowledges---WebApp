@@ -1,17 +1,24 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <link rel="stylesheet"  href="https://www.pythonanywhere.com/user/SimbaLeaozao/files/home/SimbaLeaozao/mysite/styles/styles.css"/>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
 </head>
-<body> 
-    <form action="{{ url_for('showApp', id=user.id) }}" method="post">
-        <input type="submit" value="Gerar resposta">
-    </form>
-    
-        {{resposta}}
-    
-    <a href="{{ url_for('attInfo', id=user.id) }}">Atualizar informações</a>
+<body style="background-color: rgba(0, 0, 0, 0.918);">
+    <div id="custom-container">
+        <h1>Área de Respostas</h1>
+        <p>Bem-vindo à área onde você receberá uma resposta com base nas informações que inseriu.</p>
+
+        <div id="response-box">
+            {{resposta}}
+        </div><br>
+        <form action="{{ url_for('showApp', id=user.id) }}" method="post" style="text-align: center;">
+            <input type="submit" value="Gerar resposta" style="width: 30%; padding: 15px; margin-bottom: 20px; border: none; border-radius: 4px; background-color: #28a745; color: #fff; cursor: pointer; font-size: 1.2em;">
+        </form>
+        <a href="{{ url_for('attInfo', id=user.id) }}" style="display: inline-block; width: 30%; padding: 15px; margin: 0 auto; border: none; border-radius: 4px; background-color: #007BFF; color: #fff; cursor: pointer; font-size: 1.2em; text-align: center; text-decoration: none;">Atualizar informações</a>
+
+    </div>
 </body>
 </html>

@@ -1,26 +1,45 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <link rel="stylesheet"  href="https://www.pythonanywhere.com/user/SimbaLeaozao/files/home/SimbaLeaozao/mysite/styles/styles.css"/>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
 </head>
-<body> 
-    {{ message }}
+<body style="background-color: rgba(0, 0, 0, 0.918);">
+    <div id="custom-container">
+        <h1>Atualize Suas Informações</h1>
+        <p>Aqui você pode atualizar suas informações. Preencha os campos desejados e clique em "Enviar" para salvar suas mudanças. Apenas os campos de Complexidade e Tipo do Tópico podem ser deixados em branco.</p>
+        <ul>
+                    <li><span>Os Campos:</span> campos de Complexidade e Tipo do Tópico podem ser deixados em branco.</li>
+                </ul>
+        {{ message }}
 
-    <form method='POST' action="{{  url_for('attInfo', id=user.id) }}">
-        <input type = "text" name = "username" value = {{user.username}}><br><br>
-
-
-        <input type = "text" name = "topic_1" value = {{user.topic_1}}><br>
-        <input type = "text" name = "topic_2" value = {{user.topic_2}}><br><br>
-
-        <input type = "text" name = "typeKnowledge" value = {{user.typeKnowledge}}><br>
-        <input type = "text" name = "complexity" placeholder="{{user.complexity}}"><br>
-
-        <input type = "submit" value="Enviar"> <a href = {{url_for('showApp', id=user.id)}}>APP</a>
-    </form>
-    
-    
+        <form method="POST" action="{{ url_for('attInfo', id=user.id) }}">
+            <div class="form-section">
+                <input type="text" name="username" value="{{user.username}}" placeholder="Username" required><br>
+                <input type="text" name="topic_1" value="{{user.topic_1}}" placeholder="Nome do Tópico 1" required><br>
+                <input type="text" name="topic_2" value="{{user.topic_2}}" placeholder="Nome do Tópico 2" required><br>
+                <input type="text" name="typeKnowledge" value="{{user.typeKnowledge}}" placeholder="Tipo do Tópico"><br>
+                <input type="text" name="complexity" placeholder="Complexidade" value="{{user.complexity}}"><br>
+            </div>
+            <div class="form-buttons">
+                <input type="submit" value="Enviar">
+                <a href="{{url_for('showApp', id=user.id)}}" style="
+                    display: block;
+                    width: 80%;
+                    padding: 10px;
+                    margin-bottom: 10px;
+                    border: none;
+                    border-radius: 4px;
+                    background-color: #000000;
+                    color: #ffffff;
+                    text-align: center;
+                    text-decoration: none;
+                    cursor: pointer;
+                ">Ir para o aplicativo</a>
+            </div>
+        </form>
+    </div>
 </body>
 </html>

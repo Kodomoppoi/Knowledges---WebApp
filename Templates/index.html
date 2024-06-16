@@ -1,33 +1,44 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <link rel="stylesheet"  href="https://www.pythonanywhere.com/user/SimbaLeaozao/files/home/SimbaLeaozao/mysite/styles/styles.css"/>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
 </head>
-<body>
-    {{message}}
-    <form method='POST' action="{{  url_for('addUser')  }}">
-        <input type = "text" name = "username" placeholder="Username"><br>
-        <input type = "text" name = "key" placeholder="Chave"><br><br>
 
-
-
-        <input type = "text" name = "topic_1" placeholder="Nome do Tópico"><br>
-
-        <input type = "text" name = "topic_2" placeholder="Nome do Tópico"><br><br>
-
-        <input type = "text" name = "typeKnowledge" placeholder="Tipo do Tópico"><br>
-        <input type = "text" name = "complexity" placeholder="Complexidade"><br><br>
+<body style="background-color: rgba(0, 0, 0, 0.918);">
+    <div id="custom-container">
+        <h1>Knowledges</h1>
+        <h1>Descubra Conhecimentos Raramente Explorados</h1>
+        <div id="caixa">
+            <div class="container">
+                <p>O objetivo é levar você a um universo de conhecimento pouco explorado. Aqui, pegamos dois tópicos distintos e encontramos a intersecção entre eles, revelando um novo conhecimento que poucos conhecem. É uma oportunidade única de expandir seus horizontes e descobrir algo verdadeiramente inédito.</p>
+                <h2>Como Funciona:</h2>
+                <ul>
+                    <li><span>Chave Única:</span> Cada recomendação é identificada por uma chave exclusiva.</li>
+                    <li><span>Campos Obrigatórios:</span> Preencha os campos de nome e tópicos.</li>
+                </ul>
+                <p>Mergulhe em áreas do saber que raramente recebem atenção e deixe a curiosidade guiá-lo a descobertas surpreendentes.</p>
+            </div>
+        </div>
         
-
-
-        <input type = "submit" value="Enviar">
-
-        <input type = "text" name = "login" placeholder="insira a chave"><br>
-
-
-    </form>
-
+        {{message}}<br>
+        
+        <form method="POST" action="{{ url_for('addUser') }}">
+            <div class="form-section">
+                <input type="text" name="username" placeholder="Username"><br>
+                <input type="text" name="key" placeholder="Chave"><br>
+                <input type="text" name="topic_1" placeholder="Nome do Tópico"><br>
+                <input type="text" name="topic_2" placeholder="Nome do Tópico"><br>
+                <input type = "text" name = "complexity" placeholder="Complexidade"><br>
+                <input type="text" name="typeKnowledge" placeholder="Tipo do Tópico">
+            </div>
+            <div class="form-buttons">
+                <input type="submit" value="Enviar">
+                <input type="text" name="login" placeholder="Insira a chave">
+            </div>
+        </form>
+    </div>
 </body>
 </html>
