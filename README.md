@@ -8,3 +8,8 @@ ill be showing the pages with css
 ![image](https://github.com/Kodomoppoi/Knowledges---WebApp/assets/110916457/45f38f3e-cbf6-4acf-bd16-e5b8556ff398)
 
 very basic project with chatgpt ai key. just a basic integration with a website and a rudimentory database.
+
+
+uml (or i tried to make one)
+
+![image](https://github.com/Kodomoppoi/Knowledges---WebApp/assets/110916457/6383a8a8-2d18-4052-a41f-30a01f747053)
