@@ -1,3 +1,4 @@
+SimbaLeaozao.pythonanywhere.com
 I dont have people to test, but it seems to have a glitch with the css in telemovels. i have a fleeting though that the problem is with the absolute url i fed to my html, but o well.
 ill be showing the pages with css 
 
