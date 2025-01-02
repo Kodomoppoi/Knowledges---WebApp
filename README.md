@@ -1,4 +1,4 @@
-SimbaLeaozao.pythonanywhere.com
+
 
 ![image](https://github.com/Kodomoppoi/Knowledges---WebApp/assets/110916457/3fe30f85-cd64-4ad6-a41b-555e9792e1d8)
 
